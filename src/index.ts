@@ -43,7 +43,7 @@ class KeyboardBackend implements Backend {
   private sourcePreviewNodes: Record<string, HTMLElement>;
   private sourcePreviewNodeOptions: Record<string, {}>;
   private targetNodes: Record<string, HTMLElement>;
-  private _focusOffset: Partial<XYCoord>;
+  private _focusOffset: Partial<XYCoord> = {};
   private moveStartSourceIds: string[] | undefined;
   private dragOverTargetIds: string[] | undefined;
 
@@ -206,7 +206,7 @@ class KeyboardBackend implements Backend {
     }
     if(e.key === 'Enter'){
       const { moveStartSourceIds } = this;
-      if (!this.monitor.isDragging()) {
+      if (!this.monitor.isDragging() && moveStartSourceIds) {
         this.actions.beginDrag(moveStartSourceIds, {
           clientOffset: this._focusOffset,
           getSourceClientOffset: this.getSourceClientOffset,
@@ -272,7 +272,7 @@ class KeyboardBackend implements Backend {
     this._focusOffset = {};
     this.actions.endDrag();
     if(this.options && this.options.focusOnCancelDrag){
-      const elm = this.document.querySelector(this.options.focusOnCancelDrag);
+      const elm = this.document && this.document.querySelector(this.options.focusOnCancelDrag);
       (elm as any).focus();
     }
   };
