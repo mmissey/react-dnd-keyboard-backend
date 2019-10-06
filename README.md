@@ -5,6 +5,6 @@ This is a backend for use with react-dnd. It listens for enter on drag targets a
 If you use [npm](http://npmjs.com):
 
 ```
-npm install --save react-dnd-html5-backend
+npm install --save react-dnd-keyboard-backend
 ```
 
