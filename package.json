@@ -1,0 +1,19 @@
+{
+  "name": "react-dnd-keyboard-backend",
+  "version": "0.0.1y",
+  "description": "Keyboard backend for react-DnD",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "react-dnd",
+    "keyboard",
+    "backend"
+  ],
+  "peerDependencies": {
+    "react-dnd": "^2.2.0"
+  },
+  "author": "Marc Missey",
+  "license": "ISC"
+}
