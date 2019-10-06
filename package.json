@@ -1,6 +1,6 @@
 {
   "name": "react-dnd-keyboard-backend",
-  "version": "0.0.1y",
+  "version": "1.0.0",
   "description": "Keyboard backend for react-DnD",
   "main": "index.js",
   "scripts": {
