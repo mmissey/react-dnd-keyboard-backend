@@ -15,14 +15,9 @@ export function eventShouldStartDrag(e: any) {
   return e.key === 'Enter';
 }
 
-export function eventShouldFocus(e: any) {
-  return e.key === 'Tab';
-}
-
 export function eventShouldEndDrag(e: any) {
   return e.key === 'Escape';
 }
-
 
 export function getNodeClientOffset(node: any): XYCoord | undefined {
   const el = node.nodeType === ELEMENT_NODE ? node : node.parentElement;
@@ -177,7 +172,7 @@ class KeyboardBackend implements Backend {
       if (this.document) {
         delete this.targetNodes[targetId];
         this.removeEventListener(node, 'focus', handleDropFocus as any);
-        this.addEventListener(node, 'blur', this.handleDropAreaBlur as any);
+        this.removeEventListener(node, 'blur', this.handleDropAreaBlur as any);
         this.removeEventListener(node, 'keydown', this.handleKeydown as any);
       }
     };
