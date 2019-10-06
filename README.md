@@ -1,4 +1,4 @@
-## React-DnD-Keyboard-BAckend
+## React-DnD-Keyboard-Backend
 This is a backend for use with react-dnd. It listens for enter on drag targets and focus/enter on drop targets. You'll probably want to use this with react-dnd-multi-backend to have it transition between backends based on input.
 ## Installation
 
